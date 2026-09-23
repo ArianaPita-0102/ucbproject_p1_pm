@@ -1,12 +1,11 @@
 package edu.ucb.project.UserSearch.presentation.screen
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import edu.ucb.project.UserSearch.presentation.state.UserSearchEffect
@@ -34,13 +33,13 @@ fun UserSearchScreen(
         Column(modifier = Modifier.fillMaxSize().padding(padding).padding(24.dp)) {
             TextButton(onClick = { navController.popBackStack() }) { Text("← Volver") }
 
-            Text("Buscar Usuarios", style = MaterialTheme.typography.headlineSmall)
+            Text("Buscar usuario de GitHub", style = MaterialTheme.typography.headlineSmall)
             Spacer(Modifier.height(16.dp))
 
             OutlinedTextField(
                 value = state.query,
                 onValueChange = { viewModel.emitEvent(UserSearchEvent.OnQueryChange(it)) },
-                label = { Text("Nombre") },
+                label = { Text("Alias (ej. octocat)") },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -63,14 +62,19 @@ fun UserSearchScreen(
 
             if (state.isLoading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
-            } else {
-                state.errorMessage?.let {
-                    Text(it, color = MaterialTheme.colorScheme.error)
-                }
-                LazyColumn {
-                    items(state.results) { name ->
-                        Text(name, modifier = Modifier.padding(vertical = 12.dp))
-                        HorizontalDivider()
+            }
+
+            state.errorMessage?.let {
+                Text(it, color = MaterialTheme.colorScheme.error)
+            }
+
+            state.user?.let { user ->
+                Card(modifier = Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(16.dp)) {
+                        Text(user.alias, fontWeight = FontWeight.Bold, style = MaterialTheme.typography.titleMedium)
+                        Text("Email: ${user.email.ifBlank { "No público" }}")
+                        Text("Empresa: ${user.company.ifBlank { "—" }}")
+                        Text("Avatar: ${user.avatarUrl}", style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }
