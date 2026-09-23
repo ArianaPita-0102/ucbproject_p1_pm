@@ -6,6 +6,8 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.ksp)
+
 }
 
 kotlin {
@@ -45,6 +47,8 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
             implementation(libs.koin.android)
+            implementation(libs.ktor.client.okhttp)
+
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -61,8 +65,17 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.navigation.compose)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
 
         }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }

@@ -44,10 +44,10 @@ class UserSearchViewModel(
         }
 
         viewModelScope.launch {
-            _state.update { it.copy(isLoading = true, errorMessage = null) }
+            _state.update { it.copy(isLoading = true, errorMessage = null, user = null) }
             searchUseCase(current.query)
-                .onSuccess { results ->
-                    _state.update { it.copy(isLoading = false, results = results) }
+                .onSuccess { user ->
+                    _state.update { it.copy(isLoading = false, user = user) }
                 }
                 .onFailure { error ->
                     _state.update { it.copy(isLoading = false, errorMessage = error.message) }

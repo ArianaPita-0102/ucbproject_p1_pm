@@ -1,11 +1,11 @@
 package edu.ucb.project.UserSearch.domain.usecase
 
-class SearchUserUseCase {
-    private val users = listOf(
-        "Ana Pérez", "Carlos Mamani", "Lucía Quispe",
-        "Jorge Flores", "María Choque", "Usuario de Prueba"
-    )
+import edu.ucb.project.UserSearch.domain.model.UserInfoModel
+import edu.ucb.project.UserSearch.domain.repository.GithubRepository
 
-    suspend operator fun invoke(query: String): Result<List<String>> =
-        Result.success(users.filter { it.contains(query.trim(), ignoreCase = true) })
+class SearchUserUseCase(
+    private val repository: GithubRepository
+) {
+    suspend operator fun invoke(query: String): Result<UserInfoModel> =
+        repository.findByAlias(query.trim())
 }
