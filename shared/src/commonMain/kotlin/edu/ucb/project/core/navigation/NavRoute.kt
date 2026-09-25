@@ -1,4 +1,4 @@
-package edu.ucb.project.navigation
+package edu.ucb.project.core.navigation
 
 import kotlinx.serialization.Serializable
 

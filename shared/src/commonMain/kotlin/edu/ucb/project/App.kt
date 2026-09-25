@@ -3,8 +3,7 @@ package edu.ucb.project
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import edu.ucb.project.navigation.AppNavHost
-import edu.ucb.project.signin.presentation.screen.LoginScreen
+import edu.ucb.project.core.navigation.AppNavHost
 
 @Composable
 @Preview

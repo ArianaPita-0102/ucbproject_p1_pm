@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import edu.ucb.project.navigation.NavRoute
+import edu.ucb.project.core.navigation.NavRoute
 import edu.ucb.project.profile.presentation.state.ProfileEffect
 import edu.ucb.project.profile.presentation.state.ProfileEvent
 import edu.ucb.project.profile.presentation.state.ProfileViewModel

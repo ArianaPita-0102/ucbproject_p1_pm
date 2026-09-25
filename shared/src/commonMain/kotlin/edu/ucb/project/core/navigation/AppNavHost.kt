@@ -1,4 +1,4 @@
-package edu.ucb.project.navigation
+package edu.ucb.project.core.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
