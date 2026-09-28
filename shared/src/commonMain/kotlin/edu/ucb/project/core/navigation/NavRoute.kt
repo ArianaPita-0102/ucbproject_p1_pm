@@ -16,4 +16,7 @@ sealed class NavRoute {
 
     @Serializable
     object UserSearch : NavRoute()
+
+    @Serializable
+    object Catalog : NavRoute()
 }

@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import edu.ucb.project.UserSearch.presentation.screen.UserSearchScreen
+import edu.ucb.project.catalog.presentation.screen.CatalogScreen
 import edu.ucb.project.profile.presentation.screen.ProfileEditScreen
 import edu.ucb.project.profile.presentation.screen.ProfileScreen
 import edu.ucb.project.signin.presentation.screen.LoginScreen
@@ -35,6 +36,10 @@ fun AppNavHost() {
 
         composable<NavRoute.UserSearch> {
             UserSearchScreen(navController = navController)
+        }
+
+        composable<NavRoute.Catalog> {
+            CatalogScreen(navController = navController)
         }
     }
 }

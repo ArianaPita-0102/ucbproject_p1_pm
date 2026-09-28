@@ -29,6 +29,7 @@ fun ProfileScreen(
             when (effect) {
                 ProfileEffect.NavigateToEdit -> navController.navigate(NavRoute.ProfileEdit)
                 ProfileEffect.NavigateToUserSearch -> navController.navigate(NavRoute.UserSearch)
+                ProfileEffect.NavigateToCatalog -> navController.navigate(NavRoute.Catalog)
                 ProfileEffect.NavigateToLogin -> navController.navigate(NavRoute.Login) {
                     popUpTo<NavRoute.Profile> { inclusive = true }
                 }
@@ -71,6 +72,12 @@ fun ProfileScreen(
             onClick = { viewModel.emitEvent(ProfileEvent.SearchUsersClicked) },
             modifier = Modifier.fillMaxWidth()
         ) { Text("Buscar Usuarios") }
+
+        Spacer(Modifier.height(8.dp))
+        OutlinedButton(
+            onClick = { viewModel.emitEvent(ProfileEvent.CatalogClicked) },
+            modifier = Modifier.fillMaxWidth()
+        ) { Text("Ver catálogo") }
 
         Spacer(Modifier.height(24.dp))
         Button(

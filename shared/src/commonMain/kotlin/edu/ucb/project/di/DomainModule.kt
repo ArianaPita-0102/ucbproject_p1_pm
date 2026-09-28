@@ -1,6 +1,7 @@
 package edu.ucb.project.di
 
 import edu.ucb.project.UserSearch.domain.usecase.SearchUserUseCase
+import edu.ucb.project.catalog.domain.usecase.GetCatalogUseCase
 import edu.ucb.project.profile.domain.usecase.GetProfileUseCase
 import edu.ucb.project.profile.domain.usecase.LogoutUseCase
 import edu.ucb.project.signin.domain.usecase.LoginUseCase
@@ -12,4 +13,5 @@ val domainModule = module {
     singleOf(::GetProfileUseCase)
     singleOf(::LogoutUseCase)
     singleOf(::SearchUserUseCase)
+    singleOf(::GetCatalogUseCase)
 }
