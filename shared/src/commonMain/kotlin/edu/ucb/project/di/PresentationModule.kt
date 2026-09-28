@@ -2,6 +2,7 @@ package edu.ucb.project.di
 
 import edu.ucb.project.UserSearch.presentation.state.UserSearchViewModel
 import edu.ucb.project.catalog.presentation.state.CatalogViewModel
+import edu.ucb.project.character.presentation.state.CharacterViewModel
 import edu.ucb.project.profile.presentation.state.ProfileViewModel
 import edu.ucb.project.signin.presentation.state.LoginViewModel
 import org.koin.core.module.dsl.viewModelOf
@@ -12,4 +13,5 @@ val presentationModule = module {
     viewModelOf(::ProfileViewModel)
     viewModelOf(::UserSearchViewModel)
     viewModelOf(::CatalogViewModel)
+    viewModelOf(::CharacterViewModel)
 }

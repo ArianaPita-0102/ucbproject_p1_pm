@@ -6,4 +6,5 @@ sealed interface ProfileEvent {
     data object EditProfileClicked : ProfileEvent
     data object SearchUsersClicked : ProfileEvent
     data object CatalogClicked : ProfileEvent
+    data object CharactersClicked : ProfileEvent
 }

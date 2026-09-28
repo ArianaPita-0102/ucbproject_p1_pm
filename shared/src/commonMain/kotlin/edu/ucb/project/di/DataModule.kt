@@ -13,6 +13,10 @@ import edu.ucb.project.catalog.data.datasource.CatalogRemoteDataSource
 import edu.ucb.project.catalog.data.repository.CatalogRepositoryImpl
 import edu.ucb.project.catalog.data.service.CatalogService
 import edu.ucb.project.catalog.domain.repository.CatalogRepository
+import edu.ucb.project.character.data.datasource.CharacterRemoteDataSource
+import edu.ucb.project.character.data.repository.CharacterRepositoryImpl
+import edu.ucb.project.character.data.service.CharacterService
+import edu.ucb.project.character.domain.repository.CharacterRepository
 
 val dataModule = module {
     single<AuthRepository> { AuthRepositoryImpl() }
@@ -21,4 +25,6 @@ val dataModule = module {
     single<GithubRepository> { GithubRepositoryImpl(get()) }
     single<CatalogRemoteDataSource> { CatalogService() }
     single<CatalogRepository> { CatalogRepositoryImpl(get()) }
+    single<CharacterRemoteDataSource> { CharacterService() }
+    single<CharacterRepository> { CharacterRepositoryImpl(get()) }
 }

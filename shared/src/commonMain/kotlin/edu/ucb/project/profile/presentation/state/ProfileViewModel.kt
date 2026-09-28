@@ -37,6 +37,7 @@ class ProfileViewModel(
             ProfileEvent.EditProfileClicked -> emitEffect(ProfileEffect.NavigateToEdit)
             ProfileEvent.SearchUsersClicked -> emitEffect(ProfileEffect.NavigateToUserSearch)
             ProfileEvent.CatalogClicked -> emitEffect(ProfileEffect.NavigateToCatalog)
+            ProfileEvent.CharactersClicked -> emitEffect(ProfileEffect.NavigateToCharacters)
         }
     }
 

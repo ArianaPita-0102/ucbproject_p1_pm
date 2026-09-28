@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import edu.ucb.project.UserSearch.presentation.screen.UserSearchScreen
 import edu.ucb.project.catalog.presentation.screen.CatalogScreen
+import edu.ucb.project.character.presentation.screen.CharacterScreen
 import edu.ucb.project.profile.presentation.screen.ProfileEditScreen
 import edu.ucb.project.profile.presentation.screen.ProfileScreen
 import edu.ucb.project.signin.presentation.screen.LoginScreen
@@ -40,6 +41,10 @@ fun AppNavHost() {
 
         composable<NavRoute.Catalog> {
             CatalogScreen(navController = navController)
+        }
+
+        composable<NavRoute.Character> {
+            CharacterScreen(navController = navController)
         }
     }
 }
