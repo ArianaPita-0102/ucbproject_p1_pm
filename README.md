@@ -8,6 +8,13 @@
 | Contraseña  | `123456`           |
 
 > El registro de usuarios no está habilitado; usar estas credenciales para ingresar.
+
+## Cómo probar
+
+1. Ejecutar la app en Android (`./gradlew :androidApp:assembleDebug` o botón **Run**).
+2. Iniciar sesión con las credenciales de arriba.
+3. En la pantalla de **Perfil**, tocar el botón **"Personajes Star Wars"**.
+4. Se muestra la lista de personajes consumida desde `https://swapi.dev/api/people/`.
 > 
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
