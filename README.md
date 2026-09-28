@@ -1,3 +1,14 @@
+# Examen Fila 1 – Personajes Star Wars (SWAPI)
+
+## Credenciales de prueba
+
+| Campo       | Valor              |
+|-------------|--------------------|
+| Email       | `test@ucb.edu.bo`  |
+| Contraseña  | `123456`           |
+
+> El registro de usuarios no está habilitado; usar estas credenciales para ingresar.
+> 
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
 * [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
