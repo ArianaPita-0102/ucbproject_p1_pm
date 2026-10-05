@@ -8,14 +8,13 @@ import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import edu.ucb.project.dollar.data.dao.DollarDao
 import edu.ucb.project.dollar.data.entity.DollarEntity
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 
 @Database(entities = [DollarEntity::class], version = 1)
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun dollarDao(): DollarDao
 }
-
-// The Room compiler generates the `actual` implementations.
 @Suppress("KotlinNoActualForExpect")
 expect object AppDatabaseConstructor : RoomDatabaseConstructor<AppDatabase> {
     override fun initialize(): AppDatabase

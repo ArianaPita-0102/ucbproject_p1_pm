@@ -13,6 +13,11 @@ import edu.ucb.project.catalog.data.datasource.CatalogRemoteDataSource
 import edu.ucb.project.catalog.data.repository.CatalogRepositoryImpl
 import edu.ucb.project.catalog.data.service.CatalogService
 import edu.ucb.project.catalog.domain.repository.CatalogRepository
+import edu.ucb.project.config.AppDatabase
+import edu.ucb.project.dollar.data.dao.DollarDao
+import edu.ucb.project.dollar.data.datasource.DollarLocalDataSource
+import edu.ucb.project.dollar.data.repository.DollarRepositoryImpl
+import edu.ucb.project.dollar.domain.repository.DollarRepository
 
 val dataModule = module {
     single<AuthRepository> { AuthRepositoryImpl() }
@@ -21,4 +26,7 @@ val dataModule = module {
     single<GithubRepository> { GithubRepositoryImpl(get()) }
     single<CatalogRemoteDataSource> { CatalogService() }
     single<CatalogRepository> { CatalogRepositoryImpl(get()) }
+    single<DollarDao> { get<AppDatabase>().dollarDao() }
+    single { DollarLocalDataSource(get()) }
+    single<DollarRepository> { DollarRepositoryImpl(get()) }
 }

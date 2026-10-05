@@ -1,5 +1,7 @@
 package edu.ucb.project.di
 
+import org.koin.mp.KoinPlatform
+
 fun initKoinIos() {
-    initKoin()
+    if (KoinPlatform.getKoinOrNull() == null) initKoin()
 }

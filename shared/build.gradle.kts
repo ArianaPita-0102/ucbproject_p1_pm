@@ -27,7 +27,7 @@ kotlin {
        minSdk = libs.versions.android.minSdk.get().toInt()
     
        compilerOptions {
-           jvmTarget = JvmTarget.JVM_11
+           jvmTarget = JvmTarget.JVM_17
        }
        androidResources {
            enable = true
@@ -73,7 +73,8 @@ kotlin {
             implementation(libs.coil.network.ktor3)
             implementation(libs.androidx.room3.runtime)
             implementation(libs.androidx.sqlite.bundled)
-
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.firebase.database)
         }
 
         iosMain.dependencies {
