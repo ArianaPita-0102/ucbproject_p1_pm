@@ -6,6 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import edu.ucb.project.UserSearch.presentation.screen.UserSearchScreen
 import edu.ucb.project.catalog.presentation.screen.CatalogScreen
+import edu.ucb.project.dollar.presentation.screen.DollarAddScreen
+import edu.ucb.project.dollar.presentation.screen.DollarListScreen
 import edu.ucb.project.profile.presentation.screen.ProfileEditScreen
 import edu.ucb.project.profile.presentation.screen.ProfileScreen
 import edu.ucb.project.signin.presentation.screen.LoginScreen
@@ -14,7 +16,15 @@ import edu.ucb.project.signin.presentation.screen.LoginScreen
 fun AppNavHost() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = NavRoute.Login) {
+    NavHost(navController = navController, startDestination = NavRoute.Dollar) {
+
+        composable<NavRoute.Dollar> {
+            DollarListScreen(navController = navController)
+        }
+
+        composable<NavRoute.DollarAdd> {
+            DollarAddScreen(navController = navController)
+        }
 
         composable<NavRoute.Login> {
             LoginScreen(

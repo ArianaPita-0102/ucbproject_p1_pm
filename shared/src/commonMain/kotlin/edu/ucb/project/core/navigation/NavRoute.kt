@@ -19,4 +19,10 @@ sealed class NavRoute {
 
     @Serializable
     object Catalog : NavRoute()
+
+    @Serializable
+    object Dollar : NavRoute()
+
+    @Serializable
+    object DollarAdd : NavRoute()
 }
