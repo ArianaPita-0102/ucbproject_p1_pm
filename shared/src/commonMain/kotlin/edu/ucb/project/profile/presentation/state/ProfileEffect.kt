@@ -5,5 +5,7 @@ sealed interface ProfileEffect {
     data object NavigateToEdit : ProfileEffect
     data object NavigateToUserSearch : ProfileEffect
     data object NavigateToCatalog : ProfileEffect
+    data object NavigateToExchange : ProfileEffect
+    data object NavigateToDollar : ProfileEffect
     data class ShowError(val message: String) : ProfileEffect
 }

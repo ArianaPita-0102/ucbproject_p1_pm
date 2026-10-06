@@ -3,6 +3,7 @@ package edu.ucb.project.di
 import edu.ucb.project.UserSearch.presentation.state.UserSearchViewModel
 import edu.ucb.project.catalog.presentation.state.CatalogViewModel
 import edu.ucb.project.dollar.presentation.state.DollarViewModel
+import edu.ucb.project.exchange.presentation.viewmodel.ExchangeViewModel
 import edu.ucb.project.profile.presentation.state.ProfileViewModel
 import edu.ucb.project.signin.presentation.state.LoginViewModel
 import org.koin.core.module.dsl.viewModelOf
@@ -14,4 +15,5 @@ val presentationModule = module {
     viewModelOf(::UserSearchViewModel)
     viewModelOf(::CatalogViewModel)
     viewModelOf(::DollarViewModel)
+    viewModelOf(::ExchangeViewModel)
 }

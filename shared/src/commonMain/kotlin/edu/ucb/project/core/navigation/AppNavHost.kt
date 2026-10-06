@@ -8,6 +8,7 @@ import edu.ucb.project.UserSearch.presentation.screen.UserSearchScreen
 import edu.ucb.project.catalog.presentation.screen.CatalogScreen
 import edu.ucb.project.dollar.presentation.screen.DollarAddScreen
 import edu.ucb.project.dollar.presentation.screen.DollarListScreen
+import edu.ucb.project.exchange.presentation.screen.ExchangeScreen
 import edu.ucb.project.profile.presentation.screen.ProfileEditScreen
 import edu.ucb.project.profile.presentation.screen.ProfileScreen
 import edu.ucb.project.signin.presentation.screen.LoginScreen
@@ -16,7 +17,11 @@ import edu.ucb.project.signin.presentation.screen.LoginScreen
 fun AppNavHost() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = NavRoute.Dollar) {
+    NavHost(navController = navController, startDestination = NavRoute.Login) {
+
+        composable<NavRoute.Exchange> {
+            ExchangeScreen(navController = navController)
+        }
 
         composable<NavRoute.Dollar> {
             DollarListScreen(navController = navController)
