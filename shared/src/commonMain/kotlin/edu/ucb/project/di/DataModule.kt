@@ -18,6 +18,9 @@ import edu.ucb.project.dollar.data.dao.DollarDao
 import edu.ucb.project.dollar.data.datasource.DollarLocalDataSource
 import edu.ucb.project.dollar.data.repository.DollarRepositoryImpl
 import edu.ucb.project.dollar.domain.repository.DollarRepository
+import edu.ucb.project.exchange.data.datasource.RealTimeDataBase
+import edu.ucb.project.exchange.data.repository.ExchangeRepositoryImpl
+import edu.ucb.project.exchange.domain.repository.ExchangeRepository
 
 val dataModule = module {
     single<AuthRepository> { AuthRepositoryImpl() }
@@ -29,4 +32,7 @@ val dataModule = module {
     single<DollarDao> { get<AppDatabase>().dollarDao() }
     single { DollarLocalDataSource(get()) }
     single<DollarRepository> { DollarRepositoryImpl(get()) }
+    single { RealTimeDataBase() }
+    single<ExchangeRepository> { ExchangeRepositoryImpl(get()) }
+
 }

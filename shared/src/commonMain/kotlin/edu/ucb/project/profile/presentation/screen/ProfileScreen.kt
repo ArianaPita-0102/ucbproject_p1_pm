@@ -30,6 +30,8 @@ fun ProfileScreen(
                 ProfileEffect.NavigateToEdit -> navController.navigate(NavRoute.ProfileEdit)
                 ProfileEffect.NavigateToUserSearch -> navController.navigate(NavRoute.UserSearch)
                 ProfileEffect.NavigateToCatalog -> navController.navigate(NavRoute.Catalog)
+                ProfileEffect.NavigateToExchange -> navController.navigate(NavRoute.Exchange)
+                ProfileEffect.NavigateToDollar -> navController.navigate(NavRoute.Dollar)
                 ProfileEffect.NavigateToLogin -> navController.navigate(NavRoute.Login) {
                     popUpTo<NavRoute.Profile> { inclusive = true }
                 }
@@ -72,6 +74,18 @@ fun ProfileScreen(
             onClick = { viewModel.emitEvent(ProfileEvent.SearchUsersClicked) },
             modifier = Modifier.fillMaxWidth()
         ) { Text("Buscar Usuarios") }
+
+        Spacer(Modifier.height(8.dp))
+        OutlinedButton(
+            onClick = { viewModel.emitEvent(ProfileEvent.LocalDollarClicked) },
+            modifier = Modifier.fillMaxWidth()
+        ) { Text("Cotizaciones locales") }
+
+        Spacer(Modifier.height(8.dp))
+        OutlinedButton(
+            onClick = { viewModel.emitEvent(ProfileEvent.ExchangeClicked) },
+            modifier = Modifier.fillMaxWidth()
+        ) { Text("Cotización en línea") }
 
         Spacer(Modifier.height(8.dp))
         OutlinedButton(

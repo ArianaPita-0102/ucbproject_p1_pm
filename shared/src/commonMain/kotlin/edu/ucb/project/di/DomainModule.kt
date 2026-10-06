@@ -4,6 +4,7 @@ import edu.ucb.project.UserSearch.domain.usecase.SearchUserUseCase
 import edu.ucb.project.catalog.domain.usecase.GetCatalogUseCase
 import edu.ucb.project.dollar.domain.usecase.AddDollarUseCase
 import edu.ucb.project.dollar.domain.usecase.ObserveDollarsUseCase
+import edu.ucb.project.exchange.domain.usecase.ObserveExchangeUseCase
 import edu.ucb.project.profile.domain.usecase.GetProfileUseCase
 import edu.ucb.project.profile.domain.usecase.LogoutUseCase
 import edu.ucb.project.signin.domain.usecase.LoginUseCase
@@ -18,4 +19,5 @@ val domainModule = module {
     singleOf(::GetCatalogUseCase)
     singleOf(::ObserveDollarsUseCase)
     singleOf(::AddDollarUseCase)
+    singleOf(::ObserveExchangeUseCase)
 }
